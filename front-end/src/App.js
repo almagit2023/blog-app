@@ -15,6 +15,18 @@ function App() {
     fetchBlogs();
   }, []);
 
+  const handleSearch = async () => {
+    try {
+      const response = await axios.get(`http://localhost:5000/blogs/search`, {
+        params: { keyword: searchKeyword },
+      });
+      setBlogs(response.data); // Display search results
+    } catch (error) {
+      console.error('Error searching blogs:', error);
+    }
+  };
+
+
   const fetchBlogs = async () => {
     try {
       const response = await axios.get('http://localhost:5000/blogs');
@@ -113,7 +125,7 @@ function App() {
             value={searchKeyword}
             onChange={(e) => setSearchKeyword(e.target.value)}
           />
-          <button onClick={fetchBlogs}>Search</button>
+          <button onClick={handleSearch}>Search</button>
         </div>
 
         <div>
