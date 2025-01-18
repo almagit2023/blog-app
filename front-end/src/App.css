@@ -28,6 +28,10 @@ body {
 .create-blog {
   width: 75%;
   margin-left: 2rem;
+  border: 2px solid green;
+  padding: 3rem;
+  margin-top: 1rem;
+
 }
 
 .search-blog {
@@ -210,4 +214,20 @@ p.author {
     padding: 8px 15px;
     font-size: 14px;
   }
+}
+
+.blog-detail-edit {
+  width: 75%;
+  margin: 2rem auto;
+  border: 3px solid green;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+
+.edit-btns-group button {
+  margin: 1rem;
+}
+
+.edit-btns-group:first-child {
+  background-color: orangered;
 }
